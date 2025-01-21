@@ -1,6 +1,11 @@
-# Use a basic nginx image
-FROM nginx:latest
-# Copy local content to the nginx default location
-COPY . /usr/share/nginx/html
-# Expose port 80
-EXPOSE 80
+server {
+    listen 80;
+# Route for App 1 
+location /app1/ {
+root /usr/share/nginx/html; index index.html;
+}
+#Route for App 2
+location /app2/ {
+root /usr/share/nginx/html; index index.html;
+}
+}

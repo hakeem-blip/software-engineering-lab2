@@ -1,6 +1,6 @@
-# Use a basic nginx image
 FROM nginx:latest
-# Copy local content to the nginx default location
-COPY . /usr/share/nginx/html
-# Expose port 80
-EXPOSE 80 
+# Copy App 1 to its subdirectory
+COPY ./app1 /usr/share/nginx/html/app1
+# Copy App 2 to its subdirectory
+COPY ./app2 /usr/share/nginx/html/app2
+EXPOSE 80
